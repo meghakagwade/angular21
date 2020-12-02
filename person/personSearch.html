@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="personSearch.css">
+</head>
+
+<body>
+    <div id="wrapper" class="container justify-content" ng-controller="myCtlr">
+        <div id="search" class="searchdisplay">
+            <div id="searchBarWrap">
+                <input id="inputBox"class="inputstyle" type="text" ng-model="input">
+                <input type="button" id="cancelBtn" value="x" ng-click="clear(); isVisible=false">
+            </div>
+            <input type="button" value="search" class="btn btn-secondary" ng-click="customInput=input; isVisible=true">
+        </div>
+
+        <div id="displayblock" class="searchdisplay" ng-view>
+            <p id="p1" ng-hide="isVisible">Please input search query</p>
+
+            <div ng-show="isVisible" ng-repeat="person in persons |filter:{name:customInput}"
+                ng-class="(person.gender=='M')?'blueColor':'redColor'" class="display">
+                <h4>{{person.name}}</h4>
+                <p>{{person.city}}</p>
+                <p>{{person.email}}</p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="personSearch.js"></script>
+</body>
+
+</html>
+<!-- [ngClass]="{1:'my-class1',2:'my-class2',3:'my-class4'}[step]" -->
+<!-- [ngClass]="(step=='step1')?'my-class1':'my-class2'" -->
+<!-- {'blueColor': person.gender === 'M', 'redColor':person.gender ==='F'} -->
+
+<!-- <div ng-repeat="product in products | filter: { color: 'red' }"> -->

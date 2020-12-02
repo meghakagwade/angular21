@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <div onclick="alert('second div')">
+     <div onclick="alert('first div')">
+         <button onclick="alert('button')">button</button>
+     </div>
+ </div>
+
+    <script>
+          (function(){
+              let x=(y=10);
+          })();
+          console.log(typeof(x));
+          console.log(typeof(y));
+
+        var number=0;
+        console.log(number++);
+        console.log(++number);
+        console.log(number);
+
+
+        function person(...args){
+            console.log(typeof(args));
+        }
+        person(23);
+
+        var [one,two,three]=['Jan','FEB','MARCh'];
+        console.log(one);
+        console.log(two);
+        console.log(three);
+
+        var x=10;y=20;
+        var [y,x]=[x,y];
+        console.log(x);
+        console.log(y);
+
+    </script>
+</body>
+</html>

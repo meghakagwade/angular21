@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular-route.js"></script>
+    <link rel="stylesheet" href="trialvalidation.css">
+   
+</head>
+<body>
+    <form  name="myform" id="myform">
+        <p><input type="text" name="userid"  required placeholder="UserID" ng-model="userid" >
+            <span ng-show="myform.userid.$invalid">User Id required</span>
+        </p>
+        <p><input type="text" name="passwrd"  required placeholder="Password" ng-model="passwrd">
+            <span ng-show="myform.passwrd.$invalid">Password is required</span>
+        </p>
+        
+    </form>
+    <p></p>
+   <script>
+
+   </script> 
+</body>
+</html>

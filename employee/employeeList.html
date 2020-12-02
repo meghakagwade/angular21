@@ -1,0 +1,28 @@
+<div class="jumbotron text-center">
+  <h3>Current Employee List</h3>
+  <table class="table">
+    <thead>
+      <tr>
+
+        <th scope="col">Emp Id</th>
+        <th scope="col">Employee Name</th>
+        <th scope="col">Birthdte Date</th>
+        <th scope="col">Age</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="employee in employees">
+        
+        <td>{{employee.empId}}</td>
+        <td>{{employee.fname+" "+ employee.mname +" "+employee.lname}}</td>
+        <td>{{employee.birthdate| date : "dd/mm/yyyy"}}</td>
+        <td><span ng-bind="age(employee.birthdate)"></span> </td>
+        <td><input class="btn btn-lg btn-primary"type="button" value="Edit" ng-click="editEmployee($index)"></td>
+        <td><input class="btn btn-lg btn-primary"type="button" value="Delete" ng-click="delete($index)"></td>
+      </tr>
+    </tbody>
+  </table>
+  <input class="btn btn-lg btn-primary" type="button" value="Add Employee" id="addNewEmp" ng-click="addEmployee()">
+</div>

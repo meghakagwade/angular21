@@ -1,0 +1,39 @@
+<div class="container text-left">
+
+    <div class="row">
+        <div class="col-lg-2">
+            <label for="empid" class="inputStyle">Employee ID:</label>
+
+        </div>
+        <div class="col-lg-2">
+            <input  id="empid" type="text" length="5" required disabled ng-model="empid">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"><label for="name">Employee Name: </label></div>
+        <div class="col-lg-3"><input id="fname" type="text" maxlength="15" required ng-model="fname" placeholder="Firstname">
+        </div>
+        <div class="col-lg-3"><input id="mname" type="text" maxlength="1" ng-model="mname" placeholder="Middlename">
+        </div>
+        <div class="col-lg-3"><input id="lname" type="text" maxlength="15" required ng-model="lname" placeholder="Lastname">
+        </div>
+        
+    </div>    
+    
+    <div class="row">
+        <div class="col-lg-2">
+            <label for="bdate">Birthdte: </label>            
+        </div>
+        <div class="col-lg-2">
+            <input id="bdate" type="date" ng-model="birthdate">
+        </div>
+       
+    </div>
+    <div class="row text-center">
+        <div class="col">
+        <!-- <button  type="button" class="btn btn btn-primary" ng-click="addEmp()">{{buttonName}}</button> -->
+        <input type="button" class="btn btn btn-primary" ng-value="buttonName" ng-click="addandUpdateEmp()">
+        <input type="button" class="btn btn btn-primary" value="Cancel" ng-click="cancel()">
+    </div>
+    </div>
+</div>

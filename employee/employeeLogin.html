@@ -1,0 +1,15 @@
+<div class="loginContainer text center">
+  <form class="form-signin" name="myform">
+    <img class="mb-4" src="employee-icon.png" alt="" width="72" height="72">
+    <label for="userId" class="sr-only">User Id</label>
+    <p><input type="text" name="userid" ng-model="userid" class="form-control" placeholder="UserId" required >
+      <span ng-show="myform.userid.$invalid">UserId required</span></p>
+    <label for="inputPassword"  class="sr-only">Password</label>
+    <p><input type="password" name="passwrd"  ng-model="passwrd" class="form-control" placeholder="Password" required>
+    <span ng-show="myform.passwrd.$invalid">Password required</span></p>
+    <div class="loginBtn">
+      <button class="btn btn-lg btn-primary btn-block" ng-click="login()">Login</button>
+      <button class="btn btn-lg btn-primary btn-block">Cancel</button>  
+    </div>
+  </form>
+</div>
